@@ -1,3 +1,11 @@
+/* adding tailwind delimeters */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* end */
+
 .App {
   text-align: center;
 }
