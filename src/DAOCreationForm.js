@@ -20,8 +20,12 @@ import ListSubheader from '@mui/material/ListSubheader';
 import IconButton from '@mui/material/IconButton';
 import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';
-import Stack from '@mui/material/Stack';
-import { deepOrange } from '@mui/material/colors';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import ButtonBase from '@mui/material/ButtonBase';
+import DAOFounderGrid from './DAOFounderGrid';
+
+
 
 //file uploader widget reqs
 import Uploady, { useItemProgressListener } from "@rpldy/uploady";
@@ -148,100 +152,23 @@ class DAOCreationForm extends React.Component{
                                 alt={item.author}
                                 src={item.img}
                             >
-                                
                             </Avatar>
                             ))}
                         </AvatarGroup>
                     </Grid>
-
-
-                    <Grid item>
-                    <FormControl>
-                        <Select
-                        name="os"
-                        value=""
-                        onChange=""
-                        >
-                        <MenuItem key="mac" value="mac">
-                            Mac
-                        </MenuItem>
-                        <MenuItem key="windows" value="windows">
-                            Windows
-                        </MenuItem>
-                        <MenuItem key="linux " value="linux">
-                            Linux
-                        </MenuItem>
-                        </Select>
-                    </FormControl>
-                    </Grid>
-                    <Grid item>
-                    <div style={{ width: "400px" }}>
-                        Favorite Number
-                        <Slider
-                        value=""
-                        onChange=""
-                        defaultValue={1}
-                        step={1}
-                        min={1}
-                        max={3}
-                        marks={[
-                            {
-                            value: 1,
-                            label: "1",
-                            },
-                            {
-                            value: 2,
-                            label: "2",
-                            },
-                            {
-                            value: 3,
-                            label: "3",
-                            },
-                        ]}
-                        valueLabelDisplay="off"
-                        />
-                    </div>
-                    </Grid>
-                    <Grid item>
-                    <ImageList sx={{ width: 500, height: 450 }}>
-                        <ImageListItem key="Subheader" cols={2}>
-                            <ListSubheader component="div">December</ListSubheader>
-                        </ImageListItem>
-                        {this.itemData.map((item) => (
-                            <ImageListItem key={item.img}>
-                            <img
-                                src={`${item.img}?w=248&fit=crop&auto=format`}
-                                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                                alt={item.title}
-                                loading="lazy"
-                            />
-                            <ImageListItemBar
-                                title={item.title}
-                                subtitle={item.author}
-                                actionIcon={
-                                <IconButton
-                                    sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-                                    aria-label={`info about ${item.title}`}
-                                >
-                                </IconButton>
-                                }
-                            />
-                            </ImageListItem>
-                        ))}
-                    </ImageList>
-
-                    </Grid>
-                    <Grid item>
-                        <Uploady
-                        destination={{ url: "https://my-server/upload" }}>
-                            <UploadPreview
-            fallbackUrl="https://icon-library.net/images/image-placeholder-icon/image-placeholder-icon-6.jpg"/>
-                            <LogProgress/>   
-                            <UploadButton/>
-                        </Uploady>
-                    </Grid>
+                    {this.itemData.map((itemObj) => (
+                        <Grid item>
+                            <DAOFounderGrid 
+                                imgURL={itemObj.img}
+                                id={itemObj.title}
+                                name={itemObj.author}
+                            >
+                            </DAOFounderGrid>
+                        </Grid>   
+                    ))}
+                    
                     <Button variant="contained" color="primary" type="submit">
-                    Submit
+                    Create DAO
                     </Button>
                 </Grid>
 
