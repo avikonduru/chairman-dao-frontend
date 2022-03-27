@@ -45,32 +45,14 @@ const LogProgress = () => {
     return null;
 }
 
-/*
-//form handler logic
-const [formValues, setFormValues] = useState(defaultValues);
-
-//slider UX handler
-const handleSliderChange = (name) => (e, value) => {
-    setFormValues({
-    ...formValues,
-    [name]: value,
-    });
-};
-*/
 
 class DAOCreationForm extends React.Component{
     
     
-    handleChange(event: React.ChangeEvent<HTMLInputElement>){
-        //setValue(event.target.value);
-    };
-
     constructor(props){
         super(props);
 
        
-        //this.value = React.useState('Controlled')[0];
-        //this.setValue = React.useState('Controlled')[1];
     }
 
     render(){
@@ -187,13 +169,20 @@ class DAOCreationForm extends React.Component{
                 </Grid>  
 
                 <Grid container
-                    alignItems="center" 
-                    justify="center" 
-                    direction="column"
+                    direction="row"
+                    justifyContent="space-evenly"
+                    alignItems="center"
+                    columns={16}
                 >
                     
                     {this.itemData.map((itemObj) => (
-                        <Grid item>
+                        <Box 
+                            sx={{ p: 2, 
+                            border: '1px dashed grey',
+                            width:'100%' 
+                            }}
+                        >
+                            <Grid item>
                             <DAOFounderGrid 
                                 imgURL={itemObj.img}
                                 id={itemObj.title}
@@ -201,6 +190,8 @@ class DAOCreationForm extends React.Component{
                             >
                             </DAOFounderGrid>
                         </Grid>   
+                        </Box>
+                        
                     ))}
                 </Grid>
                     <Grid container
