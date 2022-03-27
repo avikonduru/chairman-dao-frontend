@@ -24,6 +24,9 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import ButtonBase from '@mui/material/ButtonBase';
 import DAOFounderGrid from './DAOFounderGrid';
+import SendIcon from '@mui/icons-material/Send';
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
 
 
 
@@ -64,28 +67,49 @@ class DAOCreationForm extends React.Component{
 
     constructor(props){
         super(props);
+
+       
         //this.value = React.useState('Controlled')[0];
         //this.setValue = React.useState('Controlled')[1];
     }
 
     render(){
+        const Input = styled('input')({
+            display: 'none',
+        });
+
         return(
             <div>
                 <form>
-                <Grid container alignItems="center" justify="center" direction="column">
-                    <Grid item>
+                <Grid container 
+                    alignItems="center" 
+                    justify="center" 
+                    direction="column"
+                    xs={10}    
+                >
+                
+
+                <Grid container
+                    rowSpacing={2} 
+                    columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+                    alignItems="center" 
+                    justify="center" 
+                    direction="column"
+                >
+                    
+
+                    <Grid item xs={12}>
                     <h1 style={{background:'white',color:'red'}}>Create your DAO</h1>
                     </Grid>
-                    <Grid item>
-                    <TextField
+
+                    <Grid item xs={12}>
+                        <TextField
                         id="DAOName-input"
                         name="DAOName"
                         label="Name of DAO"
-                        type="text"
                         placeholder="Chad's DAO"
-                        value=""
-                        onChange="handleChange"
-                    />
+                        
+                        />
                     </Grid>
                     <Grid item>
                         <TextField
@@ -95,14 +119,13 @@ class DAOCreationForm extends React.Component{
                         multiline
                         />
                     </Grid>
-                    <Grid item>
+                    <Grid item 
+                        xs={12}
+                    >
                         <FormControl>
                         <FormLabel>Create new wallet for this DAO?</FormLabel>
                         <RadioGroup
                         name="DAOWalletType"
-                        value=""
-                        onChange=""
-                        row
                         >
                         <FormControlLabel
                             key="createNewWallet"
@@ -128,18 +151,23 @@ class DAOCreationForm extends React.Component{
                         />
                     </Grid>
                     <Grid item>
-                        <FormControl>
-                        <FormLabel>Founding Member NFT Image</FormLabel>
-                        <Uploady
-                        destination={{ url: "https://my-server/upload" }}>
-                            <UploadPreview
-            fallbackUrl="https://icon-library.net/images/image-placeholder-icon/image-placeholder-icon-6.jpg"/>
-                            <LogProgress/>   
-                            <UploadButton/>
-                        </Uploady>
-                        </FormControl>
+                    <label htmlFor="contained-button-file">
+                        <Input accept="image/*" id="contained-button-file" multiple type="file" />
+                        <Button variant="contained" component="span">
+                        Upload NFT IMG
+                        </Button>
+                    </label>
                     </Grid>
+                </Grid>
 
+                <Grid container
+                    rowSpacing={3} 
+                    columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+                    alignItems="center" 
+                    justify="center" 
+                    direction="column"
+                >
+                    
                     <Grid item>
                     <h2 style={{background:'white',color:'red'}}>DAO Founders</h2>
                     </Grid>
@@ -156,6 +184,14 @@ class DAOCreationForm extends React.Component{
                             ))}
                         </AvatarGroup>
                     </Grid>
+                </Grid>  
+
+                <Grid container
+                    alignItems="center" 
+                    justify="center" 
+                    direction="column"
+                >
+                    
                     {this.itemData.map((itemObj) => (
                         <Grid item>
                             <DAOFounderGrid 
@@ -166,10 +202,24 @@ class DAOCreationForm extends React.Component{
                             </DAOFounderGrid>
                         </Grid>   
                     ))}
+                </Grid>
+                    <Grid container
+                        rowSpacing={2} 
+                        columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+                        alignItems="center" 
+                        justify="center" 
+                        direction="column"
+                    >
+                        
+                        <Button variant="contained" 
+                            color="primary" 
+                            type="submit"
+                            endIcon={<SendIcon />}
+                        >
+                            Create DAO
+                        </Button>
+                    </Grid>
                     
-                    <Button variant="contained" color="primary" type="submit">
-                    Create DAO
-                    </Button>
                 </Grid>
 
 
