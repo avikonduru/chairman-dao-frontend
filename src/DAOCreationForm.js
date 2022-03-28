@@ -82,7 +82,11 @@ class DAOCreationForm extends React.Component{
                     
 
                     <Grid item xs={12}>
-                    <h1 sx={{ color: 'text.primary' }}>Create your DAO</h1>
+                        <Typography variant="h3" component="h4"
+                            sx={{ color: 'primary.main'}}
+                        >
+                        Create your DAO
+                        </Typography>
                     </Grid>
 
                     <Grid item xs={12}>
@@ -160,7 +164,11 @@ class DAOCreationForm extends React.Component{
                 >
                     
                     <Grid item>
-                    <h2>DAO Founders</h2>
+                    <Typography variant="h3" component="h4"
+                            sx={{ color: 'primary.main'}}
+                        >
+                            DAO Founders
+                    </Typography>
                     </Grid>
 
                     <Grid item>
@@ -187,7 +195,8 @@ class DAOCreationForm extends React.Component{
                     {this.itemData.map((itemObj) => (
                         <Box 
                             sx={{ p: 2, 
-                            border: '1px dashed grey',
+                            border: '1px solid',
+                            borderColor: 'warning.main',
                             width:'100%' 
                             }}
                         >

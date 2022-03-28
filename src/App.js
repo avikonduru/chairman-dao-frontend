@@ -24,7 +24,7 @@ const theme = createTheme({
     },
     warning: {
       // Warning color
-      main: '#85c2e7',
+      main: '#99c0ad',
     },
     info: {
       main: '#99c0ad',
