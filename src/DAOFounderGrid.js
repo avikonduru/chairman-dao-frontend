@@ -45,13 +45,12 @@ class DAOFounderGrid extends React.Component {
                         id={this.props.author}
                         label="# of Tokens"
                         placeholder="100"
-                        value="100"
                     />
                 </Grid>
             </Grid>
             <Grid item xs={2}>
                 <Grid item>
-                    <Button variant="outlined" color="error">
+                    <Button variant="contained" color="secondary">
                         Delete
                     </Button>
                 </Grid>
