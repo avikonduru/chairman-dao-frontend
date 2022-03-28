@@ -46,6 +46,7 @@ const LogProgress = () => {
 }
 
 
+
 class DAOCreationForm extends React.Component{
     
     
@@ -81,11 +82,11 @@ class DAOCreationForm extends React.Component{
                     
 
                     <Grid item xs={12}>
-                    <h1 style={{background:'white',color:'red'}}>Create your DAO</h1>
+                    <h1 sx={{ color: 'text.primary' }}>Create your DAO</h1>
                     </Grid>
 
                     <Grid item xs={12}>
-                        <TextField
+                        <TextField sx={{ color: 'text.primary'}}
                         id="DAOName-input"
                         name="DAOName"
                         label="Name of DAO"
@@ -103,21 +104,28 @@ class DAOCreationForm extends React.Component{
                     </Grid>
                     <Grid item 
                         xs={12}
+                        alignItems="center" 
+                        justify="center" 
+                        direction="column"
                     >
                         <FormControl>
                         <FormLabel>Create new wallet for this DAO?</FormLabel>
                         <RadioGroup
-                        name="DAOWalletType"
+                            row
+                            id="DAOWalletSettings"
+                            name="DAOWalletType"
+                            onChange={() =>
+                                alert("radio clicked")
+                            }
                         >
                         <FormControlLabel
                             key="createNewWallet"
-                            value="createNewWallet"
+                            value="0"
                             control={<Radio size="small" />}
-                            label="Create a Wallet for me"
-                        />
+                            label="Create a Wallet for me"                        />
                         <FormControlLabel
                             key="bringWallet"
-                            value="bringWallet"
+                            value="1"
                             control={<Radio size="small" />}
                             label="I want to connect my wallet"
                         />
@@ -130,6 +138,7 @@ class DAOCreationForm extends React.Component{
                         label="Wallet Adress"
                         placeholder="0x000"
                         disabled={true}
+                        sx={{ display: 'none' }}
                         />
                     </Grid>
                     <Grid item>
@@ -151,7 +160,7 @@ class DAOCreationForm extends React.Component{
                 >
                     
                     <Grid item>
-                    <h2 style={{background:'white',color:'red'}}>DAO Founders</h2>
+                    <h2>DAO Founders</h2>
                     </Grid>
 
                     <Grid item>
