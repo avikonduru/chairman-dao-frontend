@@ -26,7 +26,7 @@ const theme = createTheme({
     primary: {
       // Main orange (mulled wine)
       main: '#ed6c05',
-      contrastText: "#f1edea"
+      contrastText: "#4e3d66"
     },
     secondary: {
       // Main green (christine)
@@ -35,6 +35,7 @@ const theme = createTheme({
     warning: {
       // Warning color
       main: '#99c0ad',
+      contrastText: "#4e3d66"
     },
     info: {
       main: '#99c0ad',
@@ -44,7 +45,7 @@ const theme = createTheme({
     },
     text: {
       primary: '#ffffff',
-      disabled: '#f1edea',
+      disabled: '#4e3d66',
     },
     textField: {
       marginLeft: theme.spacing.unit,

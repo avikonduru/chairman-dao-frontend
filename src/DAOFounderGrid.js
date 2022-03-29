@@ -50,7 +50,7 @@ class DAOFounderGrid extends React.Component {
             </Grid>
             <Grid item xs={2}>
                 <Grid item>
-                    <Button variant="contained" color="secondary">
+                    <Button variant="contained" color="primary">
                         Delete
                     </Button>
                 </Grid>

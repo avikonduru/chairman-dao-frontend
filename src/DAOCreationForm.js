@@ -110,6 +110,14 @@ class DAOCreationForm extends React.Component{
                         multiline
                         />
                     </Grid>
+                    <Grid item>
+                    <label htmlFor="contained-button-file">
+                        <Input accept="image/*" id="contained-button-file" multiple type="file" />
+                        <Button variant="contained" component="span">
+                        Member NFT IMG
+                        </Button>
+                    </label>
+                    </Grid>
                     <Grid item 
                         xs={12}
                         alignItems="center" 
@@ -148,14 +156,6 @@ class DAOCreationForm extends React.Component{
                         disabled={true}
                         sx={{ display: 'none' }}
                         />
-                    </Grid>
-                    <Grid item>
-                    <label htmlFor="contained-button-file">
-                        <Input accept="image/*" id="contained-button-file" multiple type="file" />
-                        <Button variant="contained" component="span">
-                        Upload NFT IMG
-                        </Button>
-                    </label>
                     </Grid>
                 </Grid>
 
@@ -202,11 +202,19 @@ class DAOCreationForm extends React.Component{
                     
                     {this.itemData.map((itemObj) => (
                         <Box 
-                            sx={{ p: 2, 
-                            border: '2px solid',
-                            borderColor: 'warning.main',
-                            width:'100%' 
-                            }}
+                            sx={{
+                                boxShadow: 3,
+                                width: '50rem',
+                                bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#101010' : '#fff'),
+                                color: (theme) =>
+                                  theme.palette.mode === 'dark' ? 'grey.300' : 'grey.800',
+                                p: 1,
+                                m: 1,
+                                borderRadius: 2,
+                                textAlign: 'center',
+                                fontSize: '0.875rem',
+                                fontWeight: '700',
+                              }}
                         >
                             <Grid item>
                             <DAOFounderGrid 
