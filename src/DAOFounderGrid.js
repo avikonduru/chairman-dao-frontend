@@ -5,6 +5,8 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import ButtonBase from '@mui/material/ButtonBase';
 import TextField from "@mui/material/TextField";
+import Fab from '@mui/material/Fab';
+import CancelIcon from '@mui/icons-material/Cancel';
 import Button from "@mui/material/Button";
 import SendIcon from '@mui/icons-material/Send';
 
@@ -50,9 +52,9 @@ class DAOFounderGrid extends React.Component {
             </Grid>
             <Grid item xs={2}>
                 <Grid item>
-                    <Button variant="contained" color="primary">
-                        Delete
-                    </Button>
+                <Fab color="warning" aria-label="cancel">
+                    <CancelIcon />
+                </Fab>
                 </Grid>
             </Grid>
         </Grid>

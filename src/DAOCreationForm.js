@@ -29,24 +29,6 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 
 
-
-//file uploader widget reqs
-import Uploady, { useItemProgressListener } from "@rpldy/uploady";
-import UploadButton from "@rpldy/upload-button";
-import UploadPreview from "@rpldy/upload-preview";
-
-
-//must be rendered inside <Uploady>
-const LogProgress = () => {
-    useItemProgressListener((item) => {
-        console.log(`>>>>> (hook) File ${item.file.name} completed: ${item.completed}`);
-    });
-
-    return null;
-}
-
-
-
 class DAOCreationForm extends React.Component{
     
     
@@ -137,12 +119,13 @@ class DAOCreationForm extends React.Component{
                         <FormControlLabel
                             key="createNewWallet"
                             value="0"
-                            control={<Radio size="small" />}
-                            label="Create a Wallet for me"                        />
+                            control={<Radio size="small" color="primary"/>}
+                            label="Create a Wallet for me" 
+                       />
                         <FormControlLabel
                             key="bringWallet"
                             value="1"
-                            control={<Radio size="small" />}
+                            control={<Radio size="small" color="primary" />}
                             label="I want to connect my wallet"
                         />
                         </RadioGroup>
@@ -212,8 +195,10 @@ class DAOCreationForm extends React.Component{
                                 m: 1,
                                 borderRadius: 2,
                                 textAlign: 'center',
+                                alignContent: "center",
                                 fontSize: '0.875rem',
                                 fontWeight: '700',
+                                flexWrap: 'wrap', 
                               }}
                         >
                             <Grid item>
